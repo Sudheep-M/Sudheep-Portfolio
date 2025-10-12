@@ -175,7 +175,7 @@ library.add(fas, far, fab)
           <img
             src='sudheep5.png'
             alt='Sudheep M'
-            className='w-64 h-64 object-cover rounded-full bg-[url(Coding-gif.gif)] bg-slate-500 inset-shadow-sm inset-shadow-white shadow-white shadow-md'
+            className='w-64 h-64 object-cover rounded-full bg-[url(/Coding-gif.gif)] bg-slate-500 inset-shadow-sm inset-shadow-white shadow-white shadow-md'
           />
         </div>
         <div className='w-full flex flex-col md:w-1/2 gap-4 text-left'>
