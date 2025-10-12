@@ -264,11 +264,11 @@ library.add(fas, far, fab)
       <section className='rounded-xl'>
         <div className="p-6 shadow-lg rounded-lg">
           <h2 className="text-3xl font-bold mb-10">My Skills</h2>
-          <div className='flex flex-col gap-10 sm:flex-row flex-wrap items-center justify-evenly'>
+          <div className='flex gap-10 sm:flex-row flex-wrap items-center justify-evenly'>
           {skills.map((skill, index) => (
-            <div key={index} className="flex flex-col mb-10 md:hover:scale-105 hover:scale-110 md:hover:-translate-y-8 duration-200 bg-white/70 hover:shadow-[inset_0_0_20px_150px_white] rounded-2xl md:rounded-full aspect-square px-10 md:w-55 md:h-55 items-center justify-center">
-                <img src={skill.url} alt={skill.name.split("/").pop().split(".")[0]} className='h-30' />
-                <h1 className='text-xl font-bold text-gray-900 '>{skill.name}</h1>
+            <div key={index} className="flex flex-col mb-10 md:hover:scale-105 hover:scale-110 md:hover:-translate-y-8 duration-200 bg-white/70 hover:shadow-[inset_0_0_20px_150px_white] rounded-3xl md:rounded-full aspect-square px-10 h-30 w-30 md:w-55 md:h-55 items-center justify-center">
+                <img src={skill.url} alt={skill.name.split("/").pop().split(".")[0]} className='h-10 md:h-30' />
+                <h1 className='md:text-xl font-bold text-center text-gray-900 '>{skill.name}</h1>
             </div>
           ))}
           </div>
@@ -282,7 +282,7 @@ library.add(fas, far, fab)
             <a target='_blank' href='https://www.facebook.com/sudheepMSD'><FontAwesomeIcon className="" icon="fa-brands fa-facebook" /></a>
             <a target='_blank' href='https://github.com/Sudheep-M'><FontAwesomeIcon className="text-3xl" icon="fa-brands fa-github" /></a>
         </div>
-        <div className=" rounded-2xl p-10 text-black lg:w-1/3 md:p-8 max-w-lg text-left">
+        <div className=" rounded-2xl md:p-10 md:text-black lg:w-1/3 max-w-lg text-left">
           <h2 className="text-3xl text-gray-500 font-bold mb-4">
             Let's <span className='text-yellow-300'>Talk</span>
           </h2>
@@ -333,11 +333,11 @@ library.add(fas, far, fab)
               Send Message
             </button>
           </form>
-          <div className="mt-6 text-center text-black text-sm">
+          <div className="mt-6 text-center md:text-black text-sm">
             Or email me directly by clicking{" "}
             <a
               href="mailto:sudheepmuruganantham@gmail.com"
-              className="text-blue-700 bg-white/30 px-2  rounded-2xl font-semibold hover:underline"
+              className="text-blue-700 md:bg-white/30 px-2  rounded-2xl font-semibold hover:underline"
             >
               sudheepmuruganantham@gmail.com
             </a>
