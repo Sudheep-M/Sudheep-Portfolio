@@ -29,6 +29,7 @@ library.add(fas, far, fab)
     { name: "Node.js", url: "node_logo.png"},
     { name: "Express", url: "expressjs_logo.png"},
     { name: "MongoDB", url: "mongodb_logo.png"},
+    { name: "Github", url: "github_logo.png"},
   ];
 
 
