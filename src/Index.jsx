@@ -264,10 +264,10 @@ library.add(fas, far, fab)
       <section className='rounded-xl'>
         <div className="p-6 shadow-lg rounded-lg">
           <h2 className="text-3xl font-bold mb-10">My Skills</h2>
-          <div className='flex flex-col gap-20 md:flex-row flex-wrap items-center justify-center'>
+          <div className='flex flex-col gap-10 sm:flex-row flex-wrap items-center justify-evenly'>
           {skills.map((skill, index) => (
-            <div key={index} className="flex flex-col hover:-translate-y-10 duration-200 bg-white/75 hover:shadow-[inset_0_0_20px_150px_rgba(37,99,235,0.6)] rounded-2xl md:rounded-full aspect-square p-10 md:w-70 items-center justify-center">
-                <img src={skill.url} alt={skill.name.split("/").pop().split(".")[0]} className='h-40' />
+            <div key={index} className="flex flex-col mb-10 md:hover:scale-105 hover:scale-110 md:hover:-translate-y-8 duration-200 bg-white/70 hover:shadow-[inset_0_0_20px_150px_white] rounded-2xl md:rounded-full aspect-square px-10 md:w-55 md:h-55 items-center justify-center">
+                <img src={skill.url} alt={skill.name.split("/").pop().split(".")[0]} className='h-30' />
                 <h1 className='text-xl font-bold text-gray-900 '>{skill.name}</h1>
             </div>
           ))}
@@ -275,15 +275,15 @@ library.add(fas, far, fab)
         </div>
       </section>
       <div id="contact" className='mb-20'></div>
-      <section className='bg-gray-800 rounded-xl p-10 mt-10 min-h-screen md:flex'>
-        <div className='md:flex md:flex-col hidden justify-end md:gap-10 md:justify-center px-5'>
-            <a target='_blank' href='https://www.instagram.com/sudheep_7_'><FontAwesomeIcon className="text-3xl" icon="fa-brands fa-instagram"/></a>
-            <a target='_blank' href='https://www.linkedin.com/in/sudheep-m-331a6531b/'><FontAwesomeIcon className="text-3xl" icon="fa-brands fa-linkedin" /></a>
-            <a target='_blank' href='https://www.facebook.com/sudheepMSD'><FontAwesomeIcon className="text-3xl" icon="fa-brands fa-facebook" /></a>
+      <section className='md:bg-[url(sudheep-bg1.jpg)] bg-gray-800 bg-cover rounded-xl p-10 mt-10 min-h-screen md:flex'>
+        <div className='md:flex md:flex-col hidden justify-end text-3xl text-black md:gap-10 md:justify-center px-5'>
+            <a target='_blank' href='https://www.instagram.com/sudheep_7_'><FontAwesomeIcon className="" icon="fa-brands fa-instagram"/></a>
+            <a target='_blank' href='https://www.linkedin.com/in/sudheep-m-331a6531b/'><FontAwesomeIcon className="" icon="fa-brands fa-linkedin" /></a>
+            <a target='_blank' href='https://www.facebook.com/sudheepMSD'><FontAwesomeIcon className="" icon="fa-brands fa-facebook" /></a>
             <a target='_blank' href='https://github.com/Sudheep-M'><FontAwesomeIcon className="text-3xl" icon="fa-brands fa-github" /></a>
         </div>
-        <div className=" rounded-2xl p-10 lg:w-1/3 md:p-8 max-w-lg text-left">
-          <h2 className="text-3xl font-bold mb-4">
+        <div className=" rounded-2xl p-10 text-black lg:w-1/3 md:p-8 max-w-lg text-left">
+          <h2 className="text-3xl text-gray-500 font-bold mb-4">
             Let's <span className='text-yellow-300'>Talk</span>
           </h2>
           <p className="mb-6">
@@ -298,7 +298,7 @@ library.add(fas, far, fab)
                 value={form.name}
                 onChange={handleChange}
                 placeholder="Enter your name"
-                className="w-full p-3 bg-gray-600 rounded-xl focus:border-none focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="w-full p-3 bg-gray-600/75 rounded-xl focus:border-none focus:outline-none focus:ring-3 focus:ring-blue-600"
                 required
               />
             </div>
@@ -310,7 +310,7 @@ library.add(fas, far, fab)
                 value={form.email}
                 onChange={handleChange}
                 placeholder="Enter your email"
-                className="w-full p-3 bg-gray-600 rounded-lg focus:border-none focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="w-full p-3 bg-gray-600/75 rounded-lg focus:border-none focus:outline-none focus:ring-3 focus:ring-blue-600"
                 required
               />
             </div>
@@ -322,7 +322,7 @@ library.add(fas, far, fab)
                 value={form.message}
                 onChange={handleChange}
                 placeholder="Write your message..."
-                className="w-full p-3 bg-gray-600 rounded-lg focus:border-none focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="w-full p-3 bg-gray-600/75 rounded-lg focus:border-none focus:outline-none focus:ring-3 focus:ring-blue-600"
                 required
               ></textarea>
             </div>
@@ -333,11 +333,11 @@ library.add(fas, far, fab)
               Send Message
             </button>
           </form>
-          <div className="mt-6 text-center text-gray-300 text-sm">
+          <div className="mt-6 text-center text-black text-sm">
             Or email me directly by clicking{" "}
             <a
               href="mailto:sudheepmuruganantham@gmail.com"
-              className="text-blue-600 font-semibold hover:underline"
+              className="text-blue-700 bg-white/30 px-2  rounded-2xl font-semibold hover:underline"
             >
               sudheepmuruganantham@gmail.com
             </a>
@@ -350,11 +350,11 @@ library.add(fas, far, fab)
             <a target='_blank' href='https://github.com/Sudheep-M'><FontAwesomeIcon icon="fa-brands fa-github" /></a>
         </div>
         </div>
-        <div className='w-3/4 text-sm'>
+        {/* <div className='w-3/4 text-sm'>
           <div className='flex gap-5 justify-end place-items-end'>
           
           </div>
-        </div>
+        </div> */}
       </section>
         <div className="container font-medium mx-auto py-5 bottom-0 text-center">&copy; 2025 Sudheep M. All rights reserved.</div>
 </div>
