@@ -355,7 +355,7 @@ library.add(fas, far, fab)
           </div>
         </div>
       </section>
-        <div class="container font-medium mx-auto py-5 bottom-0 text-center">&copy; 2025 Sudheep M. All rights reserved.</div>
+        <div className="container font-medium mx-auto py-5 bottom-0 text-center">&copy; 2025 Sudheep M. All rights reserved.</div>
 
     </div>
     </>
