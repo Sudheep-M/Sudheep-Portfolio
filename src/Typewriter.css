@@ -1,0 +1,8 @@
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: white; }
+}
+.cursor {
+  border-right: 2px solid white;
+  animation: blink 0.7s step-end infinite;
+}
