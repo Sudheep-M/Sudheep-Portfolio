@@ -27,7 +27,7 @@ library.add(fas, far, fab)
     { name: "Javascript", url: "javascript_logo.png"},
     { name: "React", url:"react_logo.png"},
     { name: "Node.js", url: "node_logo.png"},
-    { name: "Express", url: "expressjs_logo.png"},
+    { name: "Express.js", url: "expressjs_logo.png"},
     { name: "MongoDB", url: "mongodb_logo.png"},
     { name: "Github", url: "github_logo.png"},
   ];
@@ -266,9 +266,9 @@ library.add(fas, far, fab)
           <h2 className="text-3xl font-bold mb-10">My Skills</h2>
           <div className='flex flex-col gap-20 md:flex-row flex-wrap items-center justify-center'>
           {skills.map((skill, index) => (
-            <div key={index} className="flex flex-col hover:scale-105 duration-200 bg-white/75 hover:shadow-[inset_0_0_20px_150px_rgba(37,99,235,0.6)] rounded-2xl md:rounded-full aspect-square p-10 md:w-70 items-center justify-center">
+            <div key={index} className="flex flex-col hover:-translate-y-10 duration-200 bg-white/75 hover:shadow-[inset_0_0_20px_150px_rgba(37,99,235,0.6)] rounded-2xl md:rounded-full aspect-square p-10 md:w-70 items-center justify-center">
                 <img src={skill.url} alt={skill.name.split("/").pop().split(".")[0]} className='h-40' />
-                <h1 className='text-xl font-bold text-gray-700 '>{skill.name}</h1>
+                <h1 className='text-xl font-bold text-gray-900 '>{skill.name}</h1>
             </div>
           ))}
           </div>
@@ -357,9 +357,10 @@ library.add(fas, far, fab)
         </div>
       </section>
         <div className="container font-medium mx-auto py-5 bottom-0 text-center">&copy; 2025 Sudheep M. All rights reserved.</div>
+</div>
 
-    </div>
     </>
 )
 }
+
 export default Index;
