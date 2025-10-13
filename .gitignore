@@ -32,3 +32,6 @@ dist/
 .env.local
 .DS_Store
 
+.env
+server.env
+
