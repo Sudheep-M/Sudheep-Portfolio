@@ -171,27 +171,27 @@ library.add(fas, far, fab)
             </div>)}
         </div>  
       </nav>
-      <section id='home' className={`md:h-130 md:snap-start flex flex-col md:flex-row items-center inset-shadow inset-shadow-cyan-500/50 justify-center rounded-xl p-8 md:p-16 text-white ${isFixed? "mt-60 md:mt-20":"mt-0"}`}>
+      <section id='home' className={`md:h-130 md:snap-start flex flex-col md:flex-row items-center inset-shadow inset-shadow-cyan-500/50 justify-center rounded-xl p-5 md:p-16 text-white ${isFixed? "mt-40 md:mt-20":"mt-0"}`}>
         <div className='w-full md:w-1/2 flex inset-1 justify-center'>
           <img
             src='sudheep5.png'
             alt='Sudheep M'
-            className='w-64 h-64 object-cover rounded-full bg-[url(/Coding-gif.gif)] bg-slate-500 inset-shadow-sm inset-shadow-white shadow-white shadow-md'
+            className='sm:w-64 sm:h-64 h-50 w-50 object-cover rounded-full bg-[url(/Coding-gif.gif)] bg-slate-500 inset-shadow-sm inset-shadow-white shadow-white shadow-md'
           />
         </div>
-        <div className='w-full flex flex-col md:w-1/2 gap-4 text-left'>
-          <h1 className="text-4xl text-yellow-400 font-bold">Hi,</h1>
-          <h1 className="text-4xl text-yellow-400 font-bold">I'am Sudheep M</h1>
-          <h2 className="text-2xl md:text-3xl font-semibold text-blue-300">
+        <div className='w-full flex flex-col md:w-1/2 gap-4 mt-10 md:mt-0 text-left'>
+          <h1 className="text-3xl md:text-4xl text-yellow-400 font-bold">Hi,</h1>
+          <h1 className="text-3xl md:text-4xl text-yellow-400 font-bold">I'am Sudheep M</h1>
+          <h2 className="text-xl md:text-3xl font-semibold text-blue-300">
           {displayedText}
           <span className="cursor" /></h2>
-          <div className='flex gap-5'>
-          <a href="Sudheep_resume.pdf" download className="mt-10 text-sm md:font-medium bold w-40 h-10 justify-center border-2 inline-flex border-blue-400 gap-2 bg-gray-800 items-center rounded-lg hover:scale-105 duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5 md:size-6">
+          <div className='flex gap-2 md:gap-5'>
+          <a href="Sudheep_resume.pdf" download className="sm:mt-10 mt-5 text-xs md:text-sm md:text-medium w-30 md:w-40 h-10 justify-center border-2 inline-flex border-blue-400 gap-2 bg-gray-800 items-center rounded-lg hover:scale-105 duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4 md:size-6">
             <path fillRule="evenodd" d="M12 2.25a.75.75 0 0 1 .75.75v11.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3a.75.75 0 0 1 .75-.75Zm-9 13.5a.75.75 0 0 1 .75.75v2.25a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V16.5a.75.75 0 0 1 1.5 0v2.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V16.5a.75.75 0 0 1 .75-.75Z" clipRule="evenodd" /></svg>
             Download CV
           </a>
-          <a href="#contact" className="mt-10 w-40 h-10 justify-center inline-flex gap-2 items-center rounded-lg hover:scale-105 duration-300 hover:shadow-[inset_0_0_10px_20px_rgba(37,99,235,0.6)]">
+          <a href="#contact" className="mt-5 md:mt-10 w-30 text- sm:w-40 sm:h-10 justify-center inline-flex gap-2 items-center rounded-lg hover:scale-105 duration-300 hover:shadow-[inset_0_0_10px_20px_rgba(37,99,235,0.6)]">
             Contact me
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
@@ -262,11 +262,11 @@ library.add(fas, far, fab)
       </section>
         <div id="skills" className='mb-20'></div>
       <section className='rounded-xl'>
-        <div className="p-6 shadow-lg rounded-lg">
+        <div className="md:p-6 shadow-lg rounded-lg">
           <h2 className="text-3xl font-bold mb-10">My Skills</h2>
-          <div className='flex gap-10 sm:flex-row flex-wrap items-center justify-evenly'>
+          <div className='flex gap-3 md:gap-5 sm:flex-row flex-wrap items-center justify-evenly'>
           {skills.map((skill, index) => (
-            <div key={index} className="flex flex-col mb-10 md:hover:scale-105 hover:scale-110 md:hover:-translate-y-8 duration-200 bg-white/70 hover:shadow-[inset_0_0_20px_150px_white] rounded-3xl md:rounded-full aspect-square px-10 h-30 w-30 md:w-55 md:h-55 items-center justify-center">
+            <div key={index} className="flex flex-col mb-2 sm:mb-10 md:hover:scale-105 hover:scale-110 md:hover:-translate-y-8 duration-200 bg-white/70 hover:shadow-[inset_0_0_20px_150px_white] rounded-3xl md:rounded-full aspect-square px-10 h-30 w-30 md:w-55 md:h-55 items-center justify-center">
                 <img src={skill.url} alt={skill.name.split("/").pop().split(".")[0]} className='h-10 md:h-30' />
                 <h1 className='md:text-xl font-bold text-center text-gray-900 '>{skill.name}</h1>
             </div>
@@ -275,7 +275,7 @@ library.add(fas, far, fab)
         </div>
       </section>
       <div id="contact" className='mb-20'></div>
-      <section className='md:bg-[url(/sudheep-bg1.jpg)] bg-gray-800 bg-cover rounded-xl p-10 mt-10 min-h-screen md:flex'>
+      <section className='md:bg-[url(/sudheep-bg1.jpg)] bg-gray-800 bg-cover rounded-xl p-5 md:p-10 mt-10 min-h-screen md:flex'>
         <div className='md:flex md:flex-col hidden justify-end text-3xl text-black md:gap-10 md:justify-center px-5'>
             <a target='_blank' href='https://www.instagram.com/sudheep_7_'><FontAwesomeIcon className="" icon="fa-brands fa-instagram"/></a>
             <a target='_blank' href='https://www.linkedin.com/in/sudheep-m-331a6531b/'><FontAwesomeIcon className="" icon="fa-brands fa-linkedin" /></a>
@@ -357,9 +357,8 @@ library.add(fas, far, fab)
         </div> */}
       </section>
         <div className="container font-medium mx-auto py-5 bottom-0 text-center">&copy; 2025 Sudheep M. All rights reserved.</div>
-</div>
-
-    </>
+  </div>
+  </>
 )
 }
 
