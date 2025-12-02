@@ -47,6 +47,7 @@ app.post("/send-email", async (req, res) => {
     res.status(500).json({ message: "❌ Email sending failed", error });
   }
 });
+    console.log(process.env.EMAIL_PASS)
 
 // ✅ Serve frontend
 app.use(express.static(path.join(__dirname, "dist")));
