@@ -32,10 +32,10 @@ const RevealOnScroll = ({
   }, [threshold, rootMargin, once]);
 
   const animations = {
-    "fade-up": "md:translate-x-80 translate-y-40 opacity-0",
-    "fade-down": "md:-translate-y-80 translate-x-40 opacity-0",
-    "fade-left": "md:-translate-x-80 -translate-x-40 opacity-0",
-    "fade-right": "md:-translate-x-80 translate-x-40 opacity-0",
+    "fade-up": "md:translate-x-80 translate-y-10 opacity-0",
+    "fade-down": "md:-translate-y-80 translate-x-10 opacity-0",
+    "fade-left": "md:-translate-x-80 -translate-x-10 opacity-0",
+    "fade-right": "md:-translate-x-80 translate-x-10 opacity-0",
     zoom: "scale-0 opacity-0",
   };
 
