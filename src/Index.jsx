@@ -282,7 +282,7 @@ library.add(fas, far, fab)
       <div id="contact" className='mb-20'></div>
       <RevealOnScroll>
       <section className='lg:bg-[url(/sudheep-bg1.jpg)] bg-gray-800 bg-cover rounded-xl p-5 md:p-10 mt-10 min-h-screen md:flex'>
-        <div className='md:flex md:flex-col hidden text-3xl lg:text-black pr-15 md:justify-center px-5'>
+        <div className='md:flex md:flex-col hidden text-3xl lg:text-black md:pr-15 lg:pr-5 md:justify-center px-5'>
       <RevealOnScroll animation="zoom" className='md:flex-col md:flex md:gap-10 lg:gap-10'>
             <a target='_blank' href='https://www.instagram.com/sudheep_7_'><FontAwesomeIcon className="" icon="fa-brands fa-instagram"/></a>
             <a target='_blank' href='https://www.linkedin.com/in/sudheep-m-331a6531b/'><FontAwesomeIcon className="" icon="fa-brands fa-linkedin" /></a>
@@ -290,8 +290,8 @@ library.add(fas, far, fab)
             <a target='_blank' href='https://github.com/Sudheep-M'><FontAwesomeIcon className="text-3xl" icon="fa-brands fa-github" /></a>
       </RevealOnScroll>
         </div>
-      <RevealOnScroll animation="zoom">
-        <div className=" rounded-2xl lg:p-10 lg:text-black lg:max-w-lg text-left">
+      <RevealOnScroll animation="zoom" className='md:flex-1 lg:flex-0'>
+        <div className=" rounded-2xl lg:p-10 lg:text-black w-lg text-left">
           <h2 className="text-3xl text-gray-500 font-bold mb-4">
             Let's <span className='text-yellow-300'>Talk</span>
           </h2>
