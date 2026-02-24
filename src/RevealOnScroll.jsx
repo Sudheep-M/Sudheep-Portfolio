@@ -3,10 +3,10 @@ import { useEffect, useRef, useState } from "react";
 const RevealOnScroll = ({
   children,
   className = "",
-  threshold = 0.2,
+  threshold = 0.3,
   rootMargin = "0px",
   once = true,
-  animation = "fade-right",
+  animation = "fade-left",
   duration = "duration-700",
   delay = "",
 }) => {
@@ -32,10 +32,10 @@ const RevealOnScroll = ({
   }, [threshold, rootMargin, once]);
 
   const animations = {
-    "fade-up": "translate-y-80 opacity-0",
-    "fade-down": "-translate-y-80 opacity-0",
-    "fade-left": "-translate-x-80 opacity-0",
-    "fade-right": "translate-x-80 opacity-0",
+    "fade-up": "md:translate-x-80 translate-y-40 opacity-0",
+    "fade-down": "md:-translate-y-80 translate-x-40 opacity-0",
+    "fade-left": "md:-translate-x-80 -translate-x-40 opacity-0",
+    "fade-right": "md:-translate-x-80 translate-x-40 opacity-0",
     zoom: "scale-0 opacity-0",
   };
 

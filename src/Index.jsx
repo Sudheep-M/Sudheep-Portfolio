@@ -204,7 +204,7 @@ library.add(fas, far, fab)
       </section>
       </RevealOnScroll>
         <div id="about" className='mb-20'></div>
-      <RevealOnScroll animation='fade-right'>
+      <RevealOnScroll animation='fade-left'>
       <section className="p-10 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-xl ">
         <section>
           <h2 className="text-3xl font-bold mb-6">About Me</h2>
@@ -261,16 +261,14 @@ library.add(fas, far, fab)
             </div>
           </div>
         </section>
-        <div id="skills"></div>
-
       </section>
       </RevealOnScroll>
         <div id="skills" className='mb-20'></div>
-      <RevealOnScroll animation='fade-left'>
+      <RevealOnScroll animation='fade-right'>
       <section className='rounded-xl'>
         <div className="md:p-6 shadow-lg rounded-lg">
           <h2 className="text-3xl font-bold mb-10">My Skills</h2>
-          <div className='flex gap-3 md:gap-5 sm:flex-row flex-wrap items-center justify-evenly'>
+          <div className='flex gap-3 md:gap-20 sm:flex-row flex-wrap items-center justify-evenly'>
           {skills.map((skill, index) => (
             <div key={index} className="flex flex-col mb-2 sm:mb-10 md:hover:scale-105 hover:scale-110 md:hover:-translate-y-8 duration-200 bg-white/70 hover:shadow-[inset_0_0_20px_150px_white] rounded-3xl md:rounded-full aspect-square px-10 h-30 w-30 md:w-55 md:h-55 items-center justify-center">
                 <img src={skill.url} alt={skill.name.split("/").pop().split(".")[0]} className='h-10 md:h-30' />
@@ -283,9 +281,9 @@ library.add(fas, far, fab)
       </RevealOnScroll>
       <div id="contact" className='mb-20'></div>
       <RevealOnScroll>
-      <section className='md:bg-[url(/sudheep-bg1.jpg)] bg-gray-800 bg-cover rounded-xl p-5 md:p-10 mt-10 min-h-screen md:flex'>
-        <div className='md:flex md:flex-col hidden text-3xl text-black  md:justify-center px-5'>
-      <RevealOnScroll animation="zoom" className='md:flex-col md:flex md:gap-10'>
+      <section className='lg:bg-[url(/sudheep-bg1.jpg)] bg-gray-800 bg-cover rounded-xl p-5 md:p-10 mt-10 min-h-screen md:flex'>
+        <div className='md:flex md:flex-col hidden text-3xl lg:text-black pr-15 md:justify-center px-5'>
+      <RevealOnScroll animation="zoom" className='md:flex-col md:flex md:gap-10 lg:gap-10'>
             <a target='_blank' href='https://www.instagram.com/sudheep_7_'><FontAwesomeIcon className="" icon="fa-brands fa-instagram"/></a>
             <a target='_blank' href='https://www.linkedin.com/in/sudheep-m-331a6531b/'><FontAwesomeIcon className="" icon="fa-brands fa-linkedin" /></a>
             <a target='_blank' href='https://www.facebook.com/sudheepMSD'><FontAwesomeIcon className="" icon="fa-brands fa-facebook" /></a>
@@ -293,7 +291,7 @@ library.add(fas, far, fab)
       </RevealOnScroll>
         </div>
       <RevealOnScroll animation="zoom">
-        <div className=" rounded-2xl md:p-10 md:text-black max-w-lg text-left">
+        <div className=" rounded-2xl lg:p-10 lg:text-black lg:max-w-lg text-left">
           <h2 className="text-3xl text-gray-500 font-bold mb-4">
             Let's <span className='text-yellow-300'>Talk</span>
           </h2>
@@ -344,11 +342,11 @@ library.add(fas, far, fab)
               Send Message
             </button>
           </form>
-          <div className="mt-6 text-center md:text-black text-sm">
-            Or email me directly by clicking{" "}
+          <div className="mt-6 text-center lg:text-black text-sm">
+            Or email me directly by clicking :{" "}<br></br>
             <a
               href="mailto:sudheepmuruganantham@gmail.com"
-              className="text-blue-700 md:bg-white/30 px-2  rounded-2xl font-semibold hover:underline"
+              className="text-blue-700 lg:bg-white/30 lg:px-2  rounded-2xl font-semibold hover:underline"
             >
               sudheepmuruganantham@gmail.com
             </a>
