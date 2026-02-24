@@ -7,6 +7,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import useActiveSection from './ActiveSection';
 import './Index.css'
 import './Typewriter.css'
+import RevealOnScroll from './RevealOnScroll';
 
 function Index() {
 
@@ -171,6 +172,7 @@ library.add(fas, far, fab)
             </div>)}
         </div>  
       </nav>
+      <RevealOnScroll animation='zoom'>
       <section id='home' className={`md:h-130 md:snap-start flex flex-col md:flex-row items-center inset-shadow inset-shadow-cyan-500/50 justify-center rounded-xl p-5 md:p-16 text-white ${isFixed? "mt-40 md:mt-20":"mt-0"}`}>
         <div className='w-full md:w-1/2 flex inset-1 justify-center'>
           <img
@@ -200,7 +202,9 @@ library.add(fas, far, fab)
           </div>
         </div>
       </section>
+      </RevealOnScroll>
         <div id="about" className='mb-20'></div>
+      <RevealOnScroll animation='fade-right'>
       <section className="p-10 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-xl ">
         <section>
           <h2 className="text-3xl font-bold mb-6">About Me</h2>
@@ -260,7 +264,9 @@ library.add(fas, far, fab)
         <div id="skills"></div>
 
       </section>
+      </RevealOnScroll>
         <div id="skills" className='mb-20'></div>
+      <RevealOnScroll animation='fade-left'>
       <section className='rounded-xl'>
         <div className="md:p-6 shadow-lg rounded-lg">
           <h2 className="text-3xl font-bold mb-10">My Skills</h2>
@@ -274,15 +280,20 @@ library.add(fas, far, fab)
           </div>
         </div>
       </section>
+      </RevealOnScroll>
       <div id="contact" className='mb-20'></div>
+      <RevealOnScroll>
       <section className='md:bg-[url(/sudheep-bg1.jpg)] bg-gray-800 bg-cover rounded-xl p-5 md:p-10 mt-10 min-h-screen md:flex'>
-        <div className='md:flex md:flex-col hidden justify-end text-3xl text-black md:gap-10 md:justify-center px-5'>
+        <div className='md:flex md:flex-col hidden text-3xl text-black  md:justify-center px-5'>
+      <RevealOnScroll animation="zoom" className='md:flex-col md:flex md:gap-10'>
             <a target='_blank' href='https://www.instagram.com/sudheep_7_'><FontAwesomeIcon className="" icon="fa-brands fa-instagram"/></a>
             <a target='_blank' href='https://www.linkedin.com/in/sudheep-m-331a6531b/'><FontAwesomeIcon className="" icon="fa-brands fa-linkedin" /></a>
             <a target='_blank' href='https://www.facebook.com/sudheepMSD'><FontAwesomeIcon className="" icon="fa-brands fa-facebook" /></a>
             <a target='_blank' href='https://github.com/Sudheep-M'><FontAwesomeIcon className="text-3xl" icon="fa-brands fa-github" /></a>
+      </RevealOnScroll>
         </div>
-        <div className=" rounded-2xl md:p-10 md:text-black lg:w-1/3 max-w-lg text-left">
+      <RevealOnScroll animation="zoom">
+        <div className=" rounded-2xl md:p-10 md:text-black max-w-lg text-left">
           <h2 className="text-3xl text-gray-500 font-bold mb-4">
             Let's <span className='text-yellow-300'>Talk</span>
           </h2>
@@ -355,7 +366,9 @@ library.add(fas, far, fab)
           
           </div>
         </div> */}
+      </RevealOnScroll>
       </section>
+      </RevealOnScroll>
         <div className="container font-medium mx-auto py-5 bottom-0 text-center">&copy; 2025 Sudheep M. All rights reserved.</div>
   </div>
   </>
