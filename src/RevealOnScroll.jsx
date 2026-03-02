@@ -39,6 +39,7 @@ const RevealOnScroll = ({
     "fade-left": "lg:-translate-x-80 -translate-x-10 opacity-0",
     "fade-right": "lg:translate-x-80 translate-x-10 opacity-0",
     zoom: "scale-0 opacity-0",
+    "skew" : ""
   };
 
   return (

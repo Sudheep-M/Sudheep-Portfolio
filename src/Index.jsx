@@ -22,6 +22,9 @@ function Index() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [current, setCurrent] = useState(0);
   const [startCarousel, setStartCarousel] = useState(false);
+  const [fullView, setfullView] = useState(false);
+  const [viewLabel, setviewlabel] = useState("View all");
+
 
 library.add(fas, far, fab)
 
@@ -36,14 +39,17 @@ library.add(fas, far, fab)
     { id: 8, name: "Github", url: "github_logo.png", color: "from-blue-500 to-cyan-500",filter:"filter brightness-0 invert"},
   ];
 
-  const nextSlide = () => {
-    setCurrent(current === skills.length - 1 ? 0 : current + 1);
-  };
+  function Fullview(){
+    if (fullView == false){
+      setfullView(true)
+      setviewlabel("View Less")
 
-  const prevSlide = () => {
-    setCurrent(current === 0 ? skills.length - 1 : current - 1);
-  };
-
+    }
+    if(fullView == true){
+      setfullView(false)
+      setviewlabel("View all")
+    }
+  }
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -258,8 +264,8 @@ library.add(fas, far, fab)
                 Focused on full-stack development, algorithms, and system design.
               </p>
             </div>
-            <div className='md:border-r-1 md:h-full'>kl</div>
-            <div className="mt-10 md:mt-0 md:text-right xl:pl-40 cursor-default">
+            <div className='md:border-r-1 md:h-full'></div>
+            <div className="mt-10 md:mt-0 md:text-right md:border-l-1 xl:pl-40 cursor-default">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                 Higher Secondary Schooling
               </h3>
@@ -275,32 +281,32 @@ library.add(fas, far, fab)
       </section>
       </RevealOnScroll>
         <div id="skills" className='mb-20'></div>
-      <RevealOnScroll animation='fade-right'>
+      <RevealOnScroll animation='fade-right' className='relative'>
       <RevealOnScroll animation="fade-up">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-16">
+        <h2 className={`text-4xl md:text-5xl font-bold text-center text-white ${fullView ? "mb-15" : "mb-16"}`}>
           Tech<span className="text-purple-500">Skills</span>
         </h2>
       </RevealOnScroll>
-      <section className="relative min-h-full mx-auto overflow-x-scroll">
-      <div className="md:flex hidden items-center justify-evenly flex-wrap m-20 gap-20 mx-auto relative z-10">
+      <section className={`relative min-h-full mx-auto md:overflow-visible overflow-hidden`}>
+      <div className={`items-center justify-evenly md:flex flex-wrap gap-5 md:gap-20 mx-auto relative z-10 ${fullView ? "flex" : "m-20 hidden"}`}>
         {skills.map((skill, index) => (
           <RevealOnScroll key={index} animation='zoom'>
             <div
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               className={`
-                transition relative duration-300 overflow-hidden rounded-xl
+                transition relative overflow-hidden duration-300 rounded-xl
                 ${hoveredIndex !== null && hoveredIndex !== index ? "brightness-50" : "brightness-100"}
                 ${hoveredIndex === index ? "scale-110 z-20" : "z-10"}
               `}
             >
-            <div className={` rotate relative p-[2px] h-60 aspect-square scale-150 bg-[conic-gradient(#4285F4,#EA4335,#FBBC05,#34A853)] transition-all duration-500`}>
+            <div className={` rotate relative p-[2px] md:h-60 h-30 aspect-square scale-150 bg-[conic-gradient(#4285F4,#EA4335,#FBBC05,#34A853)] transition-all duration-500`}>
             </div>
-              <div className="bg-gray-900 group/card absolute top-1 right-1 rounded-xl h-58 aspect-square p-8 flex flex-col items-center justify-center backdrop-blur-xl">
+              <div className="bg-gray-900 group/card overflow-hidden absolute top-1 right-1 rounded-xl h-28 md:h-58 aspect-square p-8 flex flex-col items-center justify-center backdrop-blur-xl">
                 <div className="text-5xl group-hover/card:scale-125 transition-all duration-500">
-                <img src={skill.url} alt={skill.name.split("/").pop().split(".")[0]} className={`h-20 ${skill.filter} md:h-25`}/>
+                <img src={skill.url} alt={skill.name.split("/").pop().split(".")[0]} className={`h-10 md:h-20 ${skill.filter} md:h-25`}/>
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-gray-200 group-hover:text-white transition">
+                <h3 className="mt-4 text-sm md:text-lg font-semibold text-gray-200 group-hover:text-white transition">
                   {skill.name}
                 </h3>
               </div>
@@ -315,7 +321,7 @@ library.add(fas, far, fab)
       animationPlayState: startCarousel ? "running" : "paused",
       willChange: "transform",
     }} 
-    className="flex md:hidden ml-20 gap-10 items-center w-max mx-auto relative z-10"
+    className={`${fullView ? "hidden" : "flex"} ml-20 md:hidden gap-10 items-center w-max mx-auto relative z-10`}
     >
         {[...skills, ...skills].map((skill, index) => (
             <div key={index} className={`transition carousel shadow-lg flex-shrink-0 flex flex-col gap-10 items-center text-center relative duration-300  rounded-full`}>
@@ -333,8 +339,9 @@ library.add(fas, far, fab)
       </div>
       </RevealOnScroll>
       </section>
+      <button onClick={() => Fullview()} className='md:hidden w-25 h-8 mt-10 left-1/2 rounded-3xl text-black -translate-x-12 absolute bg-purple-400 text-lg'>{viewLabel}</button>
       </RevealOnScroll>
-      <div id="contact" className='mb-20'></div>
+      <div id="contact" className='mb-30'></div>
       <RevealOnScroll>
       <section className='lg:bg-[url(/sudheep-bg1.jpg)] left-0 right-0 bg-gray-800 bg-cover rounded-xl p-5 md:p-10 mt-10 min-h-fit max-h-screen md:flex'>
         <div className='md:flex md:flex-col hidden text-3xl lg:text-black md:pr-15 lg:pr-5 md:justify-center px-5'>
