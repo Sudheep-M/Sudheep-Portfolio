@@ -20,7 +20,6 @@ function Index() {
   const [pause, setPause] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [current, setCurrent] = useState(0);
   const [startCarousel, setStartCarousel] = useState(false);
   const [fullView, setfullView] = useState(false);
   const [viewLabel, setviewlabel] = useState("View all");
@@ -281,28 +280,27 @@ library.add(fas, far, fab)
       </section>
       </RevealOnScroll>
         <div id="skills" className='mb-20'></div>
-      <RevealOnScroll animation='fade-right' className='relative'>
       <RevealOnScroll animation="fade-up">
         <h2 className={`text-4xl md:text-5xl font-bold text-center text-white ${fullView ? "mb-15" : "mb-16"}`}>
           Tech<span className="text-purple-500">Skills</span>
         </h2>
       </RevealOnScroll>
-      <section className={`relative min-h-full mx-auto md:overflow-visible overflow-hidden`}>
-      <div className={`items-center justify-evenly md:flex flex-wrap gap-5 md:gap-20 mx-auto relative z-10 ${fullView ? "flex" : "m-20 hidden"}`}>
+      <section className={`relative min-h-full mx-auto md:overflow-visible ${fullView ? "overflow-visible" : "overflow-hidden"}`}>
+      <div className={`items-center justify-evenly md:flex lg:px-30 flex-wrap gap-5 md:gap-20 mx-auto relative z-10 ${fullView ? "flex" : "m-20 hidden"}`}>
         {skills.map((skill, index) => (
-          <RevealOnScroll key={index} animation='zoom'>
+          <RevealOnScroll key={index} animation='skew' transition='ease-in-out' className='w-0' duration='duration-1000'>
             <div
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               className={`
-                transition relative overflow-hidden duration-300 rounded-xl
-                ${hoveredIndex !== null && hoveredIndex !== index ? "brightness-50" : "brightness-100"}
+                transition relative w-fit overflow-hidden duration-300 rounded-xl
+                ${hoveredIndex !== null && hoveredIndex !== index ? "md:brightness-50" : "md:brightness-100"}
                 ${hoveredIndex === index ? "scale-110 z-20" : "z-10"}
               `}
             >
-            <div className={` rotate relative p-[2px] md:h-60 h-30 aspect-square scale-150 bg-[conic-gradient(#4285F4,#EA4335,#FBBC05,#34A853)] transition-all duration-500`}>
+            <div className={` rotate relative p-[2px] md:h-50 h-30 aspect-square scale-150 bg-[conic-gradient(#4285F4,#EA4335,#FBBC05,#34A853)] transition-all duration-500`}>
             </div>
-              <div className="bg-gray-900 group/card overflow-hidden absolute top-1 right-1 rounded-xl h-28 md:h-58 aspect-square p-8 flex flex-col items-center justify-center backdrop-blur-xl">
+              <div className="bg-gray-900 group/card overflow-hidden absolute top-1 right-1 rounded-xl h-28 md:h-48 aspect-square p-8 flex flex-col items-center justify-center backdrop-blur-xl">
                 <div className="text-5xl group-hover/card:scale-125 transition-all duration-500">
                 <img src={skill.url} alt={skill.name.split("/").pop().split(".")[0]} className={`h-10 md:h-20 ${skill.filter} md:h-25`}/>
                 </div>
@@ -321,12 +319,12 @@ library.add(fas, far, fab)
       animationPlayState: startCarousel ? "running" : "paused",
       willChange: "transform",
     }} 
-    className={`${fullView ? "hidden" : "flex"} ml-20 md:hidden gap-10 items-center w-max mx-auto relative z-10`}
+    className={`${fullView ? "hidden" : "flex"} ml-15 md:hidden gap-10 items-center w-max mx-auto relative z-10`}
     >
         {[...skills, ...skills].map((skill, index) => (
             <div key={index} className={`transition carousel shadow-lg flex-shrink-0 flex flex-col gap-10 items-center text-center relative duration-300  rounded-full`}>
-              <div className={` rotate relative p-[2px] w-60 rounded-full aspect-square bg-[conic-gradient(#4285F4,#EA4335,#FBBC05,#34A853)] transition-all duration-500`}></div>
-              <div className="bg-gray-900 group/card absolute top-1 rounded-full w-58 aspect-square p-8 flex flex-col items-center justify-center backdrop-blur-xl">
+              <div className={` rotate relative p-[2px] w-50 rounded-full aspect-square bg-[conic-gradient(#4285F4,#EA4335,#FBBC05,#34A853)] transition-all duration-500`}></div>
+              <div className="bg-gray-900 group/card absolute top-1 rounded-full w-48 aspect-square p-8 flex flex-col items-center justify-center backdrop-blur-xl">
                 <div className="text-5xl group-hover/card:scale-125 transition-all duration-500">
                 <img src={skill.url} alt={skill.name.split("/").pop().split(".")[0]} className={`h-20 ${skill.filter} md:h-30`}/>
                 </div>
@@ -340,7 +338,6 @@ library.add(fas, far, fab)
       </RevealOnScroll>
       </section>
       <button onClick={() => Fullview()} className='md:hidden w-25 h-8 mt-10 left-1/2 rounded-3xl text-black -translate-x-12 absolute bg-purple-400 text-lg'>{viewLabel}</button>
-      </RevealOnScroll>
       <div id="contact" className='mb-30'></div>
       <RevealOnScroll>
       <section className='lg:bg-[url(/sudheep-bg1.jpg)] left-0 right-0 bg-gray-800 bg-cover rounded-xl p-5 md:p-10 mt-10 min-h-fit max-h-screen md:flex'>

@@ -8,8 +8,9 @@ const RevealOnScroll = ({
   rootMargin = "0px",
   once = true,
   animation = "fade-left",
-  duration = "duration-700",
+  duration = "duration-500",
   delay = "",
+  transition = "ease-out"
 }) => {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -39,16 +40,16 @@ const RevealOnScroll = ({
     "fade-left": "lg:-translate-x-80 -translate-x-10 opacity-0",
     "fade-right": "lg:translate-x-80 translate-x-10 opacity-0",
     zoom: "scale-0 opacity-0",
-    "skew" : ""
+    "skew" : "rotate-x-0 -rotate-y-90 w-0"
   };
 
   return (
     <div
       ref={ref}
       className={`
-        transition-all ease-out ${className}
+        transition-all ${transition} ${className}
         ${duration} ${delay}
-        ${isVisible ? "translate-x-0 translate-y-0 scale-100 opacity-100" : animations[animation]}
+        ${isVisible ? "translate-x-0 rotate-x-0 -rotate-y-0 translate-y-0 w-auto scale-100 opacity-100" : animations[animation]}
       `}
     >
       {children}
