@@ -276,12 +276,12 @@ library.add(fas, far, fab)
       </RevealOnScroll>
         <div id="skills" className='mb-20'></div>
       <RevealOnScroll animation='fade-right'>
-      <section className="relative min-h-full mx-auto overflow-hidden">
       <RevealOnScroll animation="fade-up">
         <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-16">
           Tech<span className="text-purple-500">Skills</span>
         </h2>
       </RevealOnScroll>
+      <section className="relative min-h-full mx-auto overflow-x-scroll">
       <div className="md:flex hidden items-center justify-evenly flex-wrap m-20 gap-20 mx-auto relative z-10">
         {skills.map((skill, index) => (
           <RevealOnScroll key={index} animation='zoom'>
