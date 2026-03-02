@@ -19,19 +19,30 @@ function Index() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [pause, setPause] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [current, setCurrent] = useState(0);
+  const [startCarousel, setStartCarousel] = useState(false);
 
 library.add(fas, far, fab)
 
   const skills = [
-    { name: "HTML", url: "html_logo.png"},
-    { name: "Tailwind CSS", url: "tailwind_logo.png"},
-    { name: "Javascript", url: "javascript_logo.png"},
-    { name: "React", url:"react_logo.png"},
-    { name: "Node.js", url: "node_logo.png"},
-    { name: "Express.js", url: "expressjs_logo.png"},
-    { name: "MongoDB", url: "mongodb_logo.png"},
-    { name: "Github", url: "github_logo.png"},
+    { id: 1, name: "HTML", url: "html_logo.png", color: "from-blue-500 via-red-500 via-yellow-400 via-green-500 to-blue-500",},
+    { id: 2, name: "Tailwind CSS", url: "tailwind_logo.png", color: "from-blue-500 via-red-500 via-green-500 to-blue-500",},
+    { id: 3, name: "Javascript", url: "javascript_logo.png", color: "from-yellow-400 to-yellow-500", },
+    { id: 4, name: "React", url:"react_logo.png", color: "from-cyan-400 to-blue-500",  },
+    { id: 5, name: "Node.js", url: "node_logo.png",color: "from-green-500 to-green-700",},
+    { id: 6, name: "Express.js", url: "expressjs_logo.png", color: "from-yellow-400 to-yellow-500", filter:"filter brightness-0 invert"},
+    { id: 7, name: "MongoDB", url: "mongodb_logo.png",color: "from-green-500 to-green-700",},
+    { id: 8, name: "Github", url: "github_logo.png", color: "from-blue-500 to-cyan-500",filter:"filter brightness-0 invert"},
   ];
+
+  const nextSlide = () => {
+    setCurrent(current === skills.length - 1 ? 0 : current + 1);
+  };
+
+  const prevSlide = () => {
+    setCurrent(current === 0 ? skills.length - 1 : current - 1);
+  };
 
 
   const handleChange = (e) => {
@@ -235,7 +246,7 @@ library.add(fas, far, fab)
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
             Education
           </h2>
-          <div className="md:flex md:mx-auto p-5 border  justify-between border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+          <div className="md:flex md:mx-auto p-5 border items-center justify-between border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
             <div className=" md:w-fit xl:pr-40 cursor-default">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                 Bachelor of Computer Application (BCA)
@@ -247,7 +258,7 @@ library.add(fas, far, fab)
                 Focused on full-stack development, algorithms, and system design.
               </p>
             </div>
-            <div className='md:border-r-1'></div>
+            <div className='md:border-r-1 md:h-full'>kl</div>
             <div className="mt-10 md:mt-0 md:text-right xl:pl-40 cursor-default">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                 Higher Secondary Schooling
@@ -265,23 +276,67 @@ library.add(fas, far, fab)
       </RevealOnScroll>
         <div id="skills" className='mb-20'></div>
       <RevealOnScroll animation='fade-right'>
-      <section className='rounded-xl'>
-        <div className="md:p-6 shadow-lg rounded-lg">
-          <h2 className="text-3xl font-bold mb-10">My Skills</h2>
-          <div className='flex gap-3 md:gap-20 sm:flex-row flex-wrap items-center justify-evenly'>
-          {skills.map((skill, index) => (
-            <div key={index} className="flex flex-col mb-2 sm:mb-10 md:hover:scale-105 hover:scale-110 md:hover:-translate-y-8 duration-200 bg-white/70 hover:shadow-[inset_0_0_20px_150px_white] rounded-3xl md:rounded-full aspect-square px-10 h-30 w-30 md:w-55 md:h-55 items-center justify-center">
-                <img src={skill.url} alt={skill.name.split("/").pop().split(".")[0]} className='h-10 md:h-30' />
-                <h1 className='md:text-xl font-bold text-center text-gray-900 '>{skill.name}</h1>
+      <section className="relative min-h-full mx-auto overflow-hidden">
+      <RevealOnScroll animation="fade-up">
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-16">
+          Tech<span className="text-purple-500">Skills</span>
+        </h2>
+      </RevealOnScroll>
+      <div className="md:flex hidden items-center justify-evenly flex-wrap m-20 gap-20 mx-auto relative z-10">
+        {skills.map((skill, index) => (
+          <RevealOnScroll key={index} animation='zoom'>
+            <div
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              className={`
+                transition relative duration-300 overflow-hidden rounded-xl
+                ${hoveredIndex !== null && hoveredIndex !== index ? "brightness-50" : "brightness-100"}
+                ${hoveredIndex === index ? "scale-110 z-20" : "z-10"}
+              `}
+            >
+            <div className={` rotate relative p-[2px] h-60 aspect-square scale-150 bg-[conic-gradient(#4285F4,#EA4335,#FBBC05,#34A853)] transition-all duration-500`}>
             </div>
-          ))}
-          </div>
-        </div>
+              <div className="bg-gray-900 group/card absolute top-1 right-1 rounded-xl h-58 aspect-square p-8 flex flex-col items-center justify-center backdrop-blur-xl">
+                <div className="text-5xl group-hover/card:scale-125 transition-all duration-500">
+                <img src={skill.url} alt={skill.name.split("/").pop().split(".")[0]} className={`h-20 ${skill.filter} md:h-25`}/>
+                </div>
+                <h3 className="mt-4 text-lg font-semibold text-gray-200 group-hover:text-white transition">
+                  {skill.name}
+                </h3>
+              </div>
+            </div>
+          </RevealOnScroll>
+        ))}
+      </div>
+    <RevealOnScroll animation="zoom" onReveal={() => setStartCarousel(true)} >
+    <div     
+      style={{
+      animation: "carousel 20s linear 1s infinite",
+      animationPlayState: startCarousel ? "running" : "paused",
+      willChange: "transform",
+    }} 
+    className="flex md:hidden ml-20 gap-10 items-center w-max mx-auto relative z-10"
+    >
+        {[...skills, ...skills].map((skill, index) => (
+            <div key={index} className={`transition carousel shadow-lg flex-shrink-0 flex flex-col gap-10 items-center text-center relative duration-300  rounded-full`}>
+              <div className={` rotate relative p-[2px] w-60 rounded-full aspect-square bg-[conic-gradient(#4285F4,#EA4335,#FBBC05,#34A853)] transition-all duration-500`}></div>
+              <div className="bg-gray-900 group/card absolute top-1 rounded-full w-58 aspect-square p-8 flex flex-col items-center justify-center backdrop-blur-xl">
+                <div className="text-5xl group-hover/card:scale-125 transition-all duration-500">
+                <img src={skill.url} alt={skill.name.split("/").pop().split(".")[0]} className={`h-20 ${skill.filter} md:h-30`}/>
+                </div>
+                <h3 className="mt-4 text-lg font-semibold text-gray-200 group-hover:text-white transition">
+                  {skill.name}
+                </h3>
+              </div>
+            </div>
+        ))}
+      </div>
+      </RevealOnScroll>
       </section>
       </RevealOnScroll>
       <div id="contact" className='mb-20'></div>
       <RevealOnScroll>
-      <section className='lg:bg-[url(/sudheep-bg1.jpg)] bg-gray-800 bg-cover rounded-xl p-5 md:p-10 mt-10 min-h-screen md:flex'>
+      <section className='lg:bg-[url(/sudheep-bg1.jpg)] left-0 right-0 bg-gray-800 bg-cover rounded-xl p-5 md:p-10 mt-10 min-h-fit max-h-screen md:flex'>
         <div className='md:flex md:flex-col hidden text-3xl lg:text-black md:pr-15 lg:pr-5 md:justify-center px-5'>
       <RevealOnScroll animation="zoom" className='md:flex-col md:flex md:gap-10 lg:gap-10'>
             <a target='_blank' href='https://www.instagram.com/sudheep_7_'><FontAwesomeIcon className="" icon="fa-brands fa-instagram"/></a>
@@ -291,7 +346,7 @@ library.add(fas, far, fab)
       </RevealOnScroll>
         </div>
       <RevealOnScroll animation="zoom" className='md:flex-1 lg:flex-0'>
-        <div className=" rounded-2xl lg:p-10 lg:text-black w-lg text-left">
+        <div className=" rounded-2xl lg:p-10 lg:text-black lg:w-lg text-left">
           <h2 className="text-3xl text-gray-500 font-bold mb-4">
             Let's <span className='text-yellow-300'>Talk</span>
           </h2>
@@ -359,11 +414,6 @@ library.add(fas, far, fab)
             <a target='_blank' href='https://github.com/Sudheep-M'><FontAwesomeIcon icon="fa-brands fa-github" /></a>
         </div>
         </div>
-        {/* <div className='w-3/4 text-sm'>
-          <div className='flex gap-5 justify-end place-items-end'>
-          
-          </div>
-        </div> */}
       </RevealOnScroll>
       </section>
       </RevealOnScroll>

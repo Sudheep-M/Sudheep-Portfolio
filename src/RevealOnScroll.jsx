@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from "react";
 
 const RevealOnScroll = ({
   children,
+  onReveal,
   className = "",
-  threshold = 0.3,
+  threshold = 0.2,
   rootMargin = "0px",
   once = true,
   animation = "fade-left",
@@ -17,6 +18,7 @@ const RevealOnScroll = ({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          onReveal?.();
           setIsVisible(true);
           if (once) observer.disconnect();
         } else if (!once) {

@@ -1,1 +1,15 @@
-@import "tailwindcss"
+@import "tailwindcss";
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotate {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes carousel {
+  from { transform: translate(0px) }
+  to { transform: translate(-50%) }
+}
