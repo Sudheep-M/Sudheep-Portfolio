@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import url('https://fonts.cdnfonts.com/css/paula-natalie');
+                
 
 @keyframes spin {
   from { transform: rotate(0deg); }
@@ -6,10 +8,26 @@
 }
 
 .rotate {
-  animation: spin 2s linear infinite;
+  animation: spin 5s linear infinite;
 }
 
 @keyframes carousel {
   from { transform: translate(0px) }
   to { transform: translate(-50%) }
+}
+
+.texts{
+  font-family: 'Paula Natalie', sans-serif;
+  animation: textanim 3s linear forwards;
+}
+
+@keyframes textanim {
+  50%{
+    stroke-dashoffset: 600;
+    fill:transparent;
+  }
+  100%{
+    stroke-dashoffset: 0;
+    fill: #facc10;
+  }
 }

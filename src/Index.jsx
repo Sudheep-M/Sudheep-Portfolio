@@ -190,26 +190,29 @@ library.add(fas, far, fab)
       </nav>
       <RevealOnScroll animation='zoom'>
       <section id='home' className={`md:h-130 md:snap-start flex flex-col md:flex-row items-center inset-shadow inset-shadow-cyan-500/50 justify-center rounded-xl p-5 md:p-16 text-white ${isFixed? "mt-40 md:mt-20":"mt-0"}`}>
-        <div className='w-full md:w-1/2 flex inset-1 justify-center'>
+      <div className='md:w-1/2 relative flex justify-center'>
+        <div className='rounded-full md:w-auto md:h-auto w-52 h-52 flex justify-center overflow-hidden'>
+          <div className={`rotate relative p-[2px] sm:h-66 h-52 rounded-full aspect-square scale-150 bg-[conic-gradient(#4285F4,#EA4335,#FBBC05,#34A853)] transition-all duration-500`}></div>
           <img
             src='sudheep5.png'
             alt='Sudheep M'
-            className='sm:w-64 sm:h-64 h-50 w-50 object-cover rounded-full bg-[url(/Coding-gif.gif)] bg-slate-500 inset-shadow-sm inset-shadow-white shadow-white shadow-md'
+            className='absolute bottom-1 md:w-64 md:h-64 h-50 w-50 object-cover rounded-full bg-[url(/Coding-gif.gif)] z-50 inset-shadow-sm'
           />
         </div>
-        <div className='w-full flex flex-col md:w-1/2 gap-4 mt-10 md:mt-0 text-left'>
-          <h1 className="text-3xl md:text-4xl text-yellow-400 font-bold">Hi,</h1>
-          <h1 className="text-3xl md:text-4xl text-yellow-400 font-bold">I'am Sudheep M</h1>
-          <h2 className="text-xl md:text-3xl font-semibold text-blue-300">
+        </div>
+        <div className='w-full flex flex-col md:w-1/2 mt-10 md:mt-0 text-left'>
+          <svg className='h-12 '><text x='1px' y='50%' dominantBaseline='middle' textAnchor='start' className='stroke-yellow-400 text-2xl md:text-4xl text-yellow-400 texts stroke-1 fill-transparent [stroke-dasharray:750] [stroke-dashoffset:750]'>Hi</text></svg>
+          <svg className='h-12 md:mt-4'><text x='1px' y='50%' dominantBaseline='middle' textAnchor='start' className='stroke-yellow-400 text-2xl md:text-4xl text-yellow-400 texts stroke-1 fill-transparent [stroke-dasharray:750] [stroke-dashoffset:750]'>I am, Sudheep M</text></svg>
+          <h2 className="text-2xl md:mt-4 md:text-3xl font-semibold text-blue-300">
           {displayedText}
           <span className="cursor" /></h2>
-          <div className='flex gap-2 md:gap-5'>
-          <a href="Sudheep_resume.pdf" download className="sm:mt-10 mt-5 text-xs md:text-sm md:text-medium w-30 md:w-40 h-10 justify-center border-2 inline-flex border-blue-400 gap-2 bg-gray-800 items-center rounded-lg hover:scale-105 duration-300">
+          <div className='flex sm:mt-8 mt-5 gap-2 md:gap-5'>
+          <a href="Sudheep_resume.pdf" download className="text-xs sm:text-sm md:text-medium w-30 md:w-40 h-10 justify-center border-2 inline-flex border-blue-400 gap-2 bg-gray-800 items-center rounded-lg hover:scale-105 duration-300">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4 md:size-6">
             <path fillRule="evenodd" d="M12 2.25a.75.75 0 0 1 .75.75v11.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3a.75.75 0 0 1 .75-.75Zm-9 13.5a.75.75 0 0 1 .75.75v2.25a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V16.5a.75.75 0 0 1 1.5 0v2.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V16.5a.75.75 0 0 1 .75-.75Z" clipRule="evenodd" /></svg>
             Download CV
           </a>
-          <a href="#contact" className="mt-5 md:mt-10 w-30 text- sm:w-40 sm:h-10 justify-center inline-flex gap-2 items-center rounded-lg hover:scale-105 duration-300 hover:shadow-[inset_0_0_10px_20px_rgba(37,99,235,0.6)]">
+          <a href="#contact" className="w-30 text-xs sm:w-40 sm:h-10 justify-center inline-flex gap-2 items-center rounded-lg hover:scale-105 duration-300 hover:shadow-[inset_0_0_10px_20px_rgba(37,99,235,0.6)]">
             Contact me
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
@@ -351,7 +354,7 @@ library.add(fas, far, fab)
         </div>
       <RevealOnScroll animation="zoom" className='md:flex-1 lg:flex-0'>
         <div className=" rounded-2xl lg:p-10 lg:text-black lg:w-lg text-left">
-          <h2 className="text-3xl text-gray-500 font-bold mb-4">
+          <h2 className="text-2xl text-gray-500 font-bold mb-4">
             Let's <span className='text-yellow-300'>Talk</span>
           </h2>
           <p className="mb-6">
@@ -401,11 +404,11 @@ library.add(fas, far, fab)
               Send Message
             </button>
           </form>
-          <div className="mt-6 text-center lg:text-black text-sm">
+          <div className="mt-6 text-center text-xs lg:text-black sm:text-sm">
             Or email me directly by clicking :{" "}<br></br>
             <a
               href="mailto:sudheepmuruganantham@gmail.com"
-              className="text-blue-700 lg:bg-white/30 lg:px-2  rounded-2xl font-semibold hover:underline"
+              className="text-blue-700 lg:bg-white/30 text-xs sm:text-sm lg:px-2 rounded-2xl font-semibold hover:underline"
             >
               sudheepmuruganantham@gmail.com
             </a>
